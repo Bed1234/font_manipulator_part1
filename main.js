@@ -5,7 +5,7 @@ nose_Y = 0;
 difference = 0;
 
 leftWristX = 0;
-rightWristX = 0;
+rightWristY = 0;
 
 function setup() {
     video = createCapture(VIDEO);
@@ -34,8 +34,8 @@ function gotPoses(results) {
      leftWristX = results[0].pose.leftWrist.x;
      rightWristY = results[0].pose.rightWrist.x;
 
-     difference = floor(leftWristX - rightWristX);
-     console.log(" left wrist = " + leftWristX + " right wrist = " + rightWristX + " difference =  " +  difference);
+     difference = floor(leftWristX - rightWristY);
+     console.log(" left wrist = " + leftWristX + " right wrist = " + rightWristY + " difference =  " +  difference);
     
 }
 
@@ -48,6 +48,6 @@ function draw(){
   background('#66b2ff');
   textSize(difference);
   fill('#FFFF00');
-  text('Bedantika Roy',50,400);
+  text('Bedantika',50,400);
 
 }
